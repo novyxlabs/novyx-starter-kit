@@ -38,15 +38,15 @@ print("2. Recalling context: 'What is the user building?'")
 context = nx.recall("What is the user building?")
 
 print("   Context for AI:")
-for memory in context.get("memories", []):
-    print(f"     {memory['observation']}")
+for memory in context:
+    print(f"     {memory.observation}")
 
 print("\n3. Recalling context: 'What is the user's name?'")
 context = nx.recall("What is the user's name?")
 
 print("   Context for AI:")
-for memory in context.get("memories", []):
-    print(f"     {memory['observation']}")
+for memory in context:
+    print(f"     {memory.observation}")
 
 print("\n✅ LangChain example complete!")
 print("   Unlike LangChain's ConversationBufferMemory, these memories persist")

@@ -29,15 +29,15 @@ print("2. Searching for 'user preferences'...")
 results = nx.recall("What are the user's preferences?")
 
 print("   Found memories:")
-for memory in results.get("memories", []):
-    print(f"     - {memory['observation']} (score: {memory['score']:.2f})")
+for memory in results:
+    print(f"     - {memory.observation} (score: {memory.score:.2f})")
 
 print("\n3. Searching for 'what is the user building?'...")
 results = nx.recall("what is the user building?")
 
 print("   Found memories:")
-for memory in results.get("memories", []):
-    print(f"     - {memory['observation']} (score: {memory['score']:.2f})")
+for memory in results:
+    print(f"     - {memory.observation} (score: {memory.score:.2f})")
 
 print("\n✅ Basic example complete!")
 print("   Try the other examples: langchain_example.py, rollback_demo.py")

@@ -32,30 +32,30 @@ print("   ❌ Stored 2 bad memories\n")
 print("3. Checking current memories...")
 results = nx.recall("user status")
 print("   Current memories:")
-for m in results.get("memories", [])[:4]:
-    print(f"     - {m['observation']}")
+for m in results.memories[:4]:
+    print(f"     - {m.observation}")
 
 # Rollback to before the bad data
 print("\n4. 🔄 Rolling back to 1 hour ago...")
 try:
-    rollback_result = nx.rollback(target="1h")
-    print(f"   ✅ Rollback status: {rollback_result.get('status')}")
-    print(f"   Artifacts affected: {rollback_result.get('artifacts_affected', 0)}")
+    rollback_result = nx.rollback(target="1 hour ago")
+    print(f"   ✅ Rolled back to: {rollback_result.get('rolled_back_to')}")
+    print(f"   Operations undone: {rollback_result.get('operations_undone', 0)}")
 
     print("\n5. Memories after rollback:")
     results = nx.recall("user status")
     print("   Restored memories:")
-    for m in results.get("memories", [])[:4]:
-        print(f"     - {m['observation']}")
+    for m in results.memories[:4]:
+        print(f"     - {m.observation}")
 
     print("\n✅ Bad data removed. Agent memory restored.")
 
 except Exception as e:
     error_msg = str(e)
-    if "requires Pro tier" in error_msg or "Upgrade required" in error_msg:
-        print(f"   ⚠️  Rollback requires Pro tier")
+    if "403" in error_msg or "Forbidden" in error_msg:
+        print(f"   ⚠️  Rollback requires a paid tier")
         print(f"   Upgrade at: https://novyxlabs.com/pricing")
-        print(f"\n   Free tier: 3 lifetime rollbacks")
+        print(f"\n   Free tier: 10 rollbacks/month")
         print(f"   Pro tier: Unlimited rollbacks")
     else:
         print(f"   ❌ Error: {error_msg}")

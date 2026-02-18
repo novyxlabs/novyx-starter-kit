@@ -46,10 +46,10 @@ Novyx Core provides Constitutional AI Infrastructure for production AI agents:
 
 | Tier | Price | Memories | API Calls | Rollbacks |
 |------|-------|----------|-----------|-----------|
-| Free | $0 | 10,000 | 5,000/mo | 3 lifetime |
-| Starter | $19/mo | 50,000 | 25,000/mo | 5/month |
-| Pro | $99/mo | Unlimited | 100,000/mo | Unlimited |
-| Enterprise | $499/mo | Unlimited | Unlimited | Unlimited |
+| Free | $0 | 5,000 | 5,000/mo | 10/mo |
+| Starter | $12/mo | 25,000 | 25,000/mo | 50/mo |
+| Pro | $39/mo | Unlimited | 100,000/mo | Unlimited |
+| Enterprise | $199/mo | Unlimited | Unlimited | Unlimited |
 
 ## Links
 
