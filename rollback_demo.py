@@ -55,7 +55,7 @@ except Exception as e:
     if "403" in error_msg or "Forbidden" in error_msg:
         print(f"   ⚠️  Rollback requires a paid tier")
         print(f"   Upgrade at: https://novyxlabs.com/pricing")
-        print(f"\n   Free tier: 3 rollbacks/month")
+        print(f"\n   Free tier: 10 rollbacks/month")
         print(f"   Pro tier: Unlimited rollbacks")
     else:
         print(f"   ❌ Error: {error_msg}")
