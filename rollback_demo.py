@@ -32,7 +32,7 @@ print("   ❌ Stored 2 bad memories\n")
 print("3. Checking current memories...")
 results = nx.recall("user status")
 print("   Current memories:")
-for m in results.memories[:4]:
+for m in results[:4]:
     print(f"     - {m.observation}")
 
 # Rollback to before the bad data
@@ -45,7 +45,7 @@ try:
     print("\n5. Memories after rollback:")
     results = nx.recall("user status")
     print("   Restored memories:")
-    for m in results.memories[:4]:
+    for m in results[:4]:
         print(f"     - {m.observation}")
 
     print("\n✅ Bad data removed. Agent memory restored.")
@@ -55,7 +55,7 @@ except Exception as e:
     if "403" in error_msg or "Forbidden" in error_msg:
         print(f"   ⚠️  Rollback requires a paid tier")
         print(f"   Upgrade at: https://novyxlabs.com/pricing")
-        print(f"\n   Free tier: 10 rollbacks/month")
+        print(f"\n   Free tier: 3 rollbacks/month")
         print(f"   Pro tier: Unlimited rollbacks")
     else:
         print(f"   ❌ Error: {error_msg}")

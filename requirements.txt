@@ -1,2 +1,2 @@
-novyx>=0.1.5
+novyx>=2.5.0
 python-dotenv
