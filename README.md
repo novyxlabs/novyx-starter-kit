@@ -34,13 +34,13 @@ Get started with Novyx Core in 5 minutes.
 - **langchain_example.py** — Drop-in replacement for LangChain ConversationBufferMemory
 - **rollback_demo.py** — See Magic Rollback in action
 
-## What is Novyx Core?
+## What is Novyx?
 
-Novyx Core provides Constitutional AI Infrastructure for production AI agents:
+Persistent memory for AI agents — sub-100ms semantic search, time-travel rollback, and tamper-proof audit trails.
 
-- **RAM (Persistent Memory)** — Sub-100ms semantic search across all memories
-- **Sentinel (Security Layer)** — Circuit breaker for unauthorized actions
-- **Magic Rollback** — Point-in-time recovery to any verified state
+- **Persistent Memory** — Store and recall with semantic search across all memories
+- **Time-Travel Rollback** — Point-in-time recovery to any verified state
+- **Audit Trails** — Cryptographic proof of every memory operation
 
 ## Pricing
 
@@ -54,7 +54,7 @@ Novyx Core provides Constitutional AI Infrastructure for production AI agents:
 ## Links
 
 - **Website:** https://novyxlabs.com
-- **Docs:** https://novyxlabs.com/docs
+- **Docs:** https://docs.novyxlabs.com
 - **Discord:** https://discord.gg/PCxZ3tMj
 - **API Status:** https://novyxlabs.com/status
 
