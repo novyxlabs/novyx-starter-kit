@@ -2,7 +2,10 @@
 
 import os
 import uuid
+from dotenv import load_dotenv
 from novyx import Novyx
+
+load_dotenv()
 
 api_key = os.environ.get("NOVYX_API_KEY", "")
 if not api_key:
@@ -27,11 +30,11 @@ while True:
     )
 
     # Recall relevant context from this session
-    results = session.recall(user_input, top_k=3)
+    results = session.recall(user_input, limit=3)
 
     print("\n--- Agent context (from memory) ---")
-    for mem in results.memories:
-        print(f"  [{mem.relevance:.2f}] {mem.observation}")
+    for mem in results:
+        print(f"  [{mem.score:.2f}] {mem.observation}")
     print("---\n")
 
     # In a real agent, you'd pass the recalled context to an LLM here.

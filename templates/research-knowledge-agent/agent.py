@@ -1,7 +1,10 @@
 """Research Knowledge Agent — knowledge graph + memory linking."""
 
 import os
+from dotenv import load_dotenv
 from novyx import Novyx
+
+load_dotenv()
 
 api_key = os.environ.get("NOVYX_API_KEY", "")
 if not api_key:
@@ -10,7 +13,7 @@ if not api_key:
 nx = Novyx(api_key=api_key)
 
 print("Research Knowledge Agent")
-print("Commands: remember, recall, triple, entity, quit\n")
+print("Commands: remember, recall, triple, search-entities, quit\n")
 
 while True:
     cmd = input("> ").strip().lower()
@@ -27,14 +30,14 @@ while True:
                 tags=["research", f"topic:{topic}"] if topic else ["research"],
                 auto_link=True,
             )
-            print(f"  Stored: {result.memory_id}\n")
+            print(f"  Stored: {result['uuid']}\n")
 
     elif cmd == "recall":
         query = input("  Query: ").strip()
         if query:
-            results = nx.recall(query, top_k=5)
-            for mem in results.memories:
-                print(f"  [{mem.relevance:.2f}] {mem.observation}")
+            results = nx.recall(query, limit=5)
+            for mem in results:
+                print(f"  [{mem.score:.2f}] {mem.observation}")
             print()
 
     elif cmd == "triple":
@@ -42,20 +45,18 @@ while True:
         predicate = input("  Predicate: ").strip()
         obj = input("  Object: ").strip()
         if subject and predicate and obj:
-            nx.knowledge_triples(
-                triples=[{"subject": subject, "predicate": predicate, "object": obj}]
-            )
+            nx.triple(subject, predicate, obj)
             print(f"  Stored: {subject} —{predicate}→ {obj}\n")
 
-    elif cmd == "entity":
-        name = input("  Entity name: ").strip()
+    elif cmd == "search-entities":
+        name = input("  Search query: ").strip()
         if name:
-            result = nx.entity(name)
-            for triple in result.triples:
-                print(f"  {triple.subject} —{triple.predicate}→ {triple.object}")
+            result = nx.entities(q=name)
+            for ent in result.get("entities", []):
+                print(f"  {ent['name']} (type: {ent.get('entity_type', 'unknown')})")
             print()
 
     else:
-        print("  Unknown command. Try: remember, recall, triple, entity, quit\n")
+        print("  Unknown command. Try: remember, recall, triple, search-entities, quit\n")
 
 print("Session ended. All memories and graph data are persisted.")

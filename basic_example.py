@@ -40,4 +40,4 @@ for memory in results:
     print(f"     - {memory.observation} (score: {memory.score:.2f})")
 
 print("\n✅ Basic example complete!")
-print("   Try the other examples: langchain_example.py, rollback_demo.py")
+print("   Try the other examples: session_example.py, rollback_demo.py")

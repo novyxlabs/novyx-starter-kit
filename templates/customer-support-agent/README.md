@@ -29,7 +29,7 @@ python agent.py
 
 - Python 3.10+
 - Novyx API key (free tier works)
-- `novyx>=2.7.0`
+- `novyx>=3.0.0`
 
 ## Tags used
 

@@ -22,15 +22,15 @@ python agent.py
 ## How it works
 
 1. **Memory with auto-linking** — each research finding is stored with `auto_link=True`, so Novyx automatically links related memories
-2. **Knowledge graph** — entities and relationships are stored as subject-predicate-object triples via `nx.knowledge_triples()`
-3. **Entity lookup** — query the graph for everything known about a specific entity with `nx.entity()`
+2. **Knowledge graph** — entities and relationships are stored as subject-predicate-object triples via `nx.triple()`
+3. **Entity search** — search for entities by name with `nx.entities(q=name)`
 4. **Cross-session recall** — no session scoping, so all memories persist and are searchable across sessions
 
 ## Requirements
 
 - Python 3.10+
 - Novyx API key (Pro tier for knowledge graph)
-- `novyx>=2.7.0`
+- `novyx>=3.0.0`
 
 ## Tags used
 

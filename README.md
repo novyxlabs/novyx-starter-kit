@@ -31,7 +31,7 @@ Get started with Novyx Core in 5 minutes.
 ## Examples
 
 - **basic_example.py** — Store and recall memories with semantic search
-- **langchain_example.py** — Drop-in replacement for LangChain ConversationBufferMemory
+- **session_example.py** — Persistent conversation memory across sessions
 - **rollback_demo.py** — See Magic Rollback in action
 
 ## What is Novyx?

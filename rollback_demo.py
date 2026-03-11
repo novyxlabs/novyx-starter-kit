@@ -2,7 +2,7 @@
 """
 Novyx Starter Kit - Rollback Demo
 ===================================
-See Magic Rollback in action (Pro tier required).
+See Magic Rollback in action (free tier: 10/month, Pro: unlimited).
 """
 
 import os
