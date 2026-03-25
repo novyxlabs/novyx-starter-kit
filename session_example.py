@@ -27,7 +27,7 @@ conversation = [
     ("assistant", "Great choice! Novyx can help with persistent memory across sessions."),
 ]
 
-print("1. Storing conversation history...")
+print("1. Storing conversation history with user and assistant turns...")
 # Store each exchange as a memory
 for role, message in conversation:
     nx.remember(f"{role}: {message}")
@@ -49,4 +49,4 @@ for memory in context:
     print(f"     {memory.observation}")
 
 print("\n✅ Session memory example complete!")
-print("   These memories persist across sessions and can be searched semantically!")
+print("   These memories persist across sessions, survive restarts, and stay searchable by meaning.")
