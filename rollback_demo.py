@@ -23,7 +23,7 @@ nx.remember("User is a premium customer")
 nx.remember("User prefers email communication")
 print("   ✅ Stored 2 good memories\n")
 
-# Simulate agent going rogue
+# Simulate an agent storing the wrong state.
 print("2. ⚠️  Agent stores bad data...")
 nx.remember("User wants to cancel their account")
 nx.remember("User is unhappy with service")
@@ -35,7 +35,7 @@ print("   Current memories:")
 for m in results[:4]:
     print(f"     - {m.observation}")
 
-# Rollback to before the bad data
+# Roll back to the earlier clean state.
 print("\n4. 🔄 Rolling back to 1 hour ago...")
 try:
     rollback_result = nx.rollback(target="1 hour ago")
@@ -48,7 +48,7 @@ try:
     for m in results[:4]:
         print(f"     - {m.observation}")
 
-    print("\n✅ Bad data removed. Agent memory restored.")
+    print("\n✅ Bad data removed. Memory state restored to the earlier checkpoint.")
 
 except Exception as e:
     error_msg = str(e)
@@ -56,9 +56,9 @@ except Exception as e:
         print(f"   ⚠️  Rollback requires a paid tier")
         print(f"   Upgrade at: https://novyxlabs.com/pricing")
         print(f"\n   Free tier: 10 rollbacks/month")
-        print(f"   Pro tier: Unlimited rollbacks")
+        print(f"   Pro tier: Unlimited rollbacks and higher usage ceilings")
     else:
         print(f"   ❌ Error: {error_msg}")
 
-print("\n📚 Learn more about Magic Rollback:")
+print("\n📚 Learn more about rollback workflows:")
 print("   https://novyxlabs.com/docs")
