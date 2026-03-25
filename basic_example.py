@@ -18,15 +18,15 @@ nx = Novyx(api_key=os.getenv("NOVYX_API_KEY"))
 print("=== Novyx Basic Example ===\n")
 
 # Store memories
-print("1. Storing memories...")
+print("1. Storing a few memories with distinct preferences and project context...")
 nx.remember("User prefers dark mode")
 nx.remember("User's favorite language is Python")
 nx.remember("User is building an AI agent for customer support")
 print("   ✅ Stored 3 memories\n")
 
-# Semantic search (finds by meaning, not keywords)
-print("2. Searching for 'user preferences'...")
-results = nx.recall("What are the user's preferences?")
+# Semantic search finds related facts even when the wording changes.
+print("2. Searching for 'preferred setup'...")
+results = nx.recall("What setup or preferences does the user have?")
 
 print("   Found memories:")
 for memory in results:
@@ -40,4 +40,4 @@ for memory in results:
     print(f"     - {memory.observation} (score: {memory.score:.2f})")
 
 print("\n✅ Basic example complete!")
-print("   Try the other examples: session_example.py, rollback_demo.py")
+print("   Try session_example.py for continuity and rollback_demo.py for recovery workflows.")
