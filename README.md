@@ -2,6 +2,12 @@
 
 Get started with Novyx Core in 5 minutes.
 
+> Status: this starter kit is legacy onboarding collateral for the memory,
+> audit, and rollback APIs. It is still useful for SDK smoke tests and simple
+> examples, but the current Novyx Core product direction is change control for
+> AI agents touching production: blast-radius gates, approval evidence,
+> compensation, and exactly-once execution for risky side effects.
+
 ## Quick Start
 
 1. **Clone this repo:**
@@ -42,14 +48,16 @@ Persistent memory for AI agents — sub-100ms semantic search, time-travel rollb
 - **Time-Travel Rollback** — Point-in-time recovery to any verified state
 - **Audit Trails** — Cryptographic proof of every memory operation
 
+## How to Use This Repo Now
+
+- Use it to smoke-test the public Python SDK.
+- Use the examples as small snippets for docs or demos.
+- Do not treat this repo as the flagship Novyx positioning.
+- Prefer newer product demos that show change control, blast-radius review, and action approval.
+
 ## Pricing
 
-| Tier | Price | Memories | API Calls | Rollbacks |
-|------|-------|----------|-----------|-----------|
-| Free | $0 | 5,000 | 5,000/mo | 10/mo |
-| Starter | $12/mo | 25,000 | 25,000/mo | 50/mo |
-| Pro | $39/mo | Unlimited | 100,000/mo | Unlimited |
-| Enterprise | $199/mo | Unlimited | Unlimited | Unlimited |
+Pricing changes over time. Check the Novyx website for the current plan limits.
 
 ## Links
 
