@@ -42,7 +42,7 @@ Get started with Novyx Core in 5 minutes.
 
 ## What is Novyx?
 
-Persistent memory for AI agents — sub-100ms semantic search, time-travel rollback, and tamper-proof audit trails.
+Persistent memory for AI agents — semantic recall (`basic_example.py`), point-in-time rollback (`rollback_demo.py`), and a tamper-evident SHA-256 hash-chained audit log.
 
 - **Persistent Memory** — Store and recall with semantic search across all memories
 - **Time-Travel Rollback** — Point-in-time recovery to any verified state
